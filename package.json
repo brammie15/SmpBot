@@ -1,0 +1,23 @@
+{
+  "name": "smpbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brammie15/SmpBot.git"
+  },
+  "author": "brammie15",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brammie15/SmpBot/issues"
+  },
+  "homepage": "https://github.com/brammie15/SmpBot#readme",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "request": "^2.88.2"
+  }
+}
