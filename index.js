@@ -41,6 +41,39 @@ client.on('message', message => {
 				message.channel.send(wow);
 		}
 		});*/
+	}else if(message.content === `${prefix}players`){
+		request('https://api.mcsrvstat.us/2/WildnessSMP.serv.gs', (error, respone, body) =>{
+			if(!error && respone.statusCode == 200) {
+				const imported = JSON.parse(body);
+				
+				const online = imported['players'];
+				const PlayerList = online.list;
+				
+				/*var End = "Current Online Players: ";
+				for (i in PlayerList) {
+					var temp = JSON.stringify(PlayerList[i]);
+					End = End + temp + "+";
+				  } 
+				  End.replace('"',' ')*/
+				  
+				const exampleEmbed = new Discord.MessageEmbed()
+					.setColor('#acba13')
+					.setDescription('Current Online Players')
+					.setTimestamp()
+				for (i in PlayerList) {
+					var temp = JSON.stringify(PlayerList[i]);
+					var name = temp.split('"');
+					if (name[1] == 'little_angellie') {
+						name[1] += " :heart:"
+					}
+					exampleEmbed.addField("Player:", name[1] );
+					console.log();
+				} 
+				
+					message.channel.send(exampleEmbed);	
+				
+			}
+		});
 	}
 
 });
