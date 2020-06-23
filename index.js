@@ -45,6 +45,9 @@ client.on('message', message => {
 		request('https://api.mcsrvstat.us/2/WildnessSMP.serv.gs', (error, respone, body) =>{
 			if(!error && respone.statusCode == 200) {
 				const imported = JSON.parse(body);
+				const online = imported['online'];
+				if(online == true){
+
 				
 				const online = imported['players'];
 				const PlayerList = online.list;
@@ -71,7 +74,9 @@ client.on('message', message => {
 				} 
 				
 					message.channel.send(exampleEmbed);	
-				
+			}else{
+				message.channel.send("Server Is Currently Offline")
+			}
 			}
 		});
 	}
