@@ -89,7 +89,7 @@ client.on('message', message => {
 							{ name: '&players', value: "get the current playerlist on the server" },
 						)
 						.setTimestamp()
-					channel.message.send(helpembedd);
+					message.channel.send(helpembedd);
 	}
 
 });
