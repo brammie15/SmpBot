@@ -79,6 +79,17 @@ client.on('message', message => {
 			}
 			}
 		});
+	}else if(message.content === `${prefix}help`){
+		
+					const helpembedd = new Discord.MessageEmbed()
+						.setColor('#0099ff')
+						.setDescription('Help')
+						.addFields(
+							{ name: '&status', value: "Get the status of the server"  },
+							{ name: '&players', value: "get the current playerlist on the server" },
+						)
+						.setTimestamp()
+					channel.message.send(helpembedd);
 	}
 
 });
